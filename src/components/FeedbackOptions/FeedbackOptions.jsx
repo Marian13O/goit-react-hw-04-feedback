@@ -1,20 +1,17 @@
 import PropTypes from 'prop-types';
 import style from './FeedbackOptions.module.css';
-import React, { useState } from 'react';
 
 function FeedbackOptions({ options, onLeaveFeedback }) {
   const optionKeys = Object.keys(options);
-  const setSelectedOption = useState(null);
 
   const handleFeedbackClick = option => {
-    setSelectedOption(option);
     onLeaveFeedback(option);
   };
 
   return (
     <div className={style.feedbackcontainer}>
-      {optionKeys.map((option, index) => (
-        <li className={style.feedbackoptions} key={index}>
+      {optionKeys.map(option => (
+        <li className={style.feedbackoptions} key={option}>
           <button
             type="button"
             name={option}
