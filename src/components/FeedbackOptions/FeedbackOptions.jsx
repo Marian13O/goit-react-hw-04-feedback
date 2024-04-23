@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 function FeedbackOptions({ options, onLeaveFeedback }) {
   const optionKeys = Object.keys(options);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const setSelectedOption = useState(null);
 
   const handleFeedbackClick = option => {
     setSelectedOption(option);
